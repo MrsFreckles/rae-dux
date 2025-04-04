@@ -52,10 +52,6 @@ points:
         thumb: {}
 
 outlines:
-  raw:
-    - what: rectangle
-      where: true
-      size: [kx, ky]
   keys:
     - what: rectangle
       where: true
