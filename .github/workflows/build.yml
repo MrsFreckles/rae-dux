@@ -12,8 +12,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 17.x
-      - name: Install dependencies
-        run: npm install
+      - name: Update dependencies
+        run: npm update
       - name: Generate unrouted PCBs
         run: npm run gen
       - name: Remove existing DSN file if it exists
