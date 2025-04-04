@@ -10,52 +10,47 @@ units:
   ky: cy
   px: kx + 2
   py: ky + 2
+
 points:
-  key:
-    footprints:
-      choc:
-        type: choc
-        nets:
-          from: '!colrow'
-          to: '!colrow'
-      diode:
-        type: diode
-        anchor:
-          rotate: 180
-          shift: [0, -9.5]
-        nets:
-          from: '!colrow'
-          to: '!colrow'
   zones:
     matrix:
       anchor:
         rotate: 5
       columns:
-        funckeys:
-        pinky:
-        ring.key:
-          splay: -5
-          origin: [-12, -19]
-          stagger: 12
-        middle.key.stagger: 5
-        index.key.stagger: -6
-        inner.key.stagger: -2
+        funckeys: {}
+        pinky: {}
+        ring:
+          key:
+            splay: -5
+            origin: [-12, -19]
+            stagger: 12
+        middle:
+          key:
+            stagger: 5
+        index:
+          key:
+            stagger: -6
+        inner:
+          key:
+            stagger: -2
       rows:
-        bottom:
-        home:
-        top:
+        bottom: {}
+        home: {}
+        top: {}
     thumbfan:
       anchor:
         ref: matrix_inner_bottom
         shift: [-7, -19]
       columns:
-        near:
-        home.key:
-          spread: 21.25
-          splay: -28
-          origin: [-11.75, -9]
+        near: {}
+        home:
+          key:
+            spread: 21.25
+            splay: -28
+            origin: [-11.75, -9]
       rows:
-        thumb:
+        thumb: {}
+
 outlines:
   raw:
     - what: rectangle
@@ -70,57 +65,57 @@ outlines:
       operation: stack
       points:
         - ref: matrix_funckeys_bottom
-          shift: [-0.52 kx, -0.5 kx]
+          shift: [-0.52*kx, -0.5*kx]
         - ref: matrix_pinky_bottom
-          shift: [0.52 kx, -0.5 kx]
+          shift: [0.52*kx, -0.5*kx]
         - ref: matrix_ring_bottom
-          shift: [-0.58 kx, -0.5 kx]
+          shift: [-0.58*kx, -0.5*kx]
         - ref: matrix_ring_bottom
-          shift: [0.555 kx, -0.5 kx]
+          shift: [0.555*kx, -0.5*kx]
         - ref: matrix_middle_bottom
-          shift: [-0.5 kx, -0.5 kx]
+          shift: [-0.5*kx, -0.5*kx]
         - ref: matrix_middle_bottom
-          shift: [0.5 kx, -0.5 kx]
+          shift: [0.5*kx, -0.5*kx]
         - ref: matrix_index_bottom
-          shift: [-0.555 kx, -0.5 kx]
+          shift: [-0.555*kx, -0.5*kx]
         - ref: matrix_index_bottom
-          shift: [0.1 kx, -0.5 kx]
+          shift: [0.1*kx, -0.5*kx]
         - ref: thumbfan_near_thumb
-          shift: [-0.56 kx, -0.52 kx]
+          shift: [-0.56*kx, -0.52*kx]
         - ref: thumbfan_home_thumb
-          shift: [-0.6 kx, -0.5 kx]
+          shift: [-0.6*kx, -0.5*kx]
         - ref: thumbfan_home_thumb
-          shift: [0.52 kx, -0.5 kx]
+          shift: [0.52*kx, -0.5*kx]
         - ref: thumbfan_home_thumb
-          shift: [0.52 kx, 0.5 kx]
+          shift: [0.52*kx, 0.5*kx]
         - ref: thumbfan_home_thumb
-          shift: [-0.77 kx, 0.5kx]
+          shift: [-0.77*kx, 0.5*kx]
         - ref: matrix_inner_top
-          shift: [0.5 kx, +0.5 kx]
+          shift: [0.5*kx, 0.5*kx]
         - ref: matrix_inner_top
-          shift: [-0.5 kx, 0.5 kx]
+          shift: [-0.5*kx, 0.5*kx]
         - ref: matrix_index_top
-          shift: [0.555 kx, 0.5 kx]
+          shift: [0.555*kx, 0.5*kx]
         - ref: matrix_index_top
-          shift: [-0.5 kx, 0.5 kx]
+          shift: [-0.5*kx, 0.5*kx]
         - ref: matrix_middle_top
-          shift: [0.555 kx, +0.5 kx]
+          shift: [0.555*kx, 0.5*kx]
         - ref: matrix_middle_top
-          shift: [-0.55 kx, +0.5 kx]
+          shift: [-0.55*kx, 0.5*kx]
         - ref: matrix_ring_top
-          shift: [0.5 kx, +0.5 kx]
+          shift: [0.5*kx, 0.5*kx]
         - ref: matrix_ring_top
-          shift: [-0.52 kx, +0.5 kx]
+          shift: [-0.52*kx, 0.5*kx]
         - ref: matrix_pinky_top
-          shift: [0.79 kx, +0.5 kx]
+          shift: [0.79*kx, 0.5*kx]
         - ref: matrix_funckeys_top
-          shift: [-0.52 kx, +0.5 kx]
-      adjust:
-      expand: 1.3)
+          shift: [-0.52*kx, 0.5*kx]
+      expand: 1.3
   combo:
     - name: board
     - operation: subtract
       name: keys
+
 cases:
   keyboard_stl:
     - name: board
@@ -129,6 +124,7 @@ cases:
     - name: raw
       operation: subtract
       extrude: 1
+
 pcbs:
   keyboard:
     outlines:
